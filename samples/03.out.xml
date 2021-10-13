@@ -790,16 +790,23 @@
                 <!-- Then use the post body as the schema.org description, for good G+/FB snippeting. -->
                 <div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id' expr:itemprop='(data:blog.metaDescription ? &quot;&quot; : &quot;description &quot;) + &quot;articleBody&quot;'>
 
+
                   <!-- [data:post.body][BEGIN] -->
                   <b:if cond='data:blog.pageType != &quot;item&quot;'>
                     <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
                       <div>
                         <b:if cond='data:post.thumbnailUrl'>
-                          <img class='post-thumbnail' expr:alt='data:post.title' expr:src='data:post.thumbnailUrl' width='72px' height='72px'/>
+                          <p class='ui-item-thumbnail'>
+                            <img class='post-thumbnail' expr:alt='data:post.title' expr:src='data:post.thumbnailUrl' width='72px' height='72px'/>
+                          </p>
                           <b:else/>
-                          <img class='post-thumbnail' alt='no image' width='1px' height='1px' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQYV2NgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII='/>
+                          <p class='ui-item-thumbnail'>
+                            <img class='post-thumbnail' alt='no image' width='1px' height='1px' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQYV2NgYAAAAAMAAWgmWQ0AAAAASUVORK5CYII='/>
+                          </p>
                         </b:if>
-                        <data:post.snippet/>
+                        <div class='ui-item-des'>
+                          <data:post.snippet/>
+                        </div>
                       </div>
                       <div class='jump-link'>
                         <a expr:href='data:post.url' expr:title='data:post.title'>
