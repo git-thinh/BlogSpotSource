@@ -91,14 +91,13 @@
         </b:template-skin>
       </div>
       <div class='ui-main-wrapper'>
-        <b:section class='ui-main-articles' id='MainPost' showaddelement='yes'>
-          <b:widget id='Blog1' locked='false' type='Blog'/>
-        </b:section>
+        Đây là nội dung hiển thị trong phần Main Content
       </div>
       <div class='ui-sidebar-wrapper'>
-        <b:section class='sidebar' id='Sidebar' showaddelement='yes'/>
+        Đây là nội dung hiển thị trong phần Sidebar
       </div>
     </div>
+    <b:section class='navbar' id='navbar' maxwidgets='1' showaddelement='yes' />
   </body>
   <!-- Kết thúc phần hiển thị trên web -->
 
