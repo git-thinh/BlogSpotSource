@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+    <title>Tiêu đề trang web</title>
+    
+    <!-- Bắt đầu viết Css cho web -->
+    <b:skin>
+      <![CDATA[
+        .wrapper {
+          width: 800px;
+          margin: 0 auto;
+        }
+        
+        .header {
+          width: 100%;
+          min-height: 90px;
+          background: #4d90fe;
+        }
+        
+        .main-wrapper {
+          width: 70%;
+          float:left;
+          min-height: 300px;
+          background: #f0c36d;
+        }
+        
+        .sidebar-wrapper {
+          width: 30%;
+          float:right;
+          min-height: 300px;
+          background: #f9edbe;
+        }
+      ]]>
+    </b:skin>
+  
+  </head>
+  
+  <!-- Bắt đầu phần hiển thị trên web -->
+  <body>
+    <div class='wrapper'>
+      <div class='header'>
+        Đây là nội dung hiển thị trong phần Header
+      </div>
+      <div class='main-wrapper'>
+        Đây là nội dung hiển thị trong phần Main Content
+      </div>
+      <div class='sidebar-wrapper'>
+        Đây là nội dung hiển thị trong phần Sidebar
+      </div>
+    </div>
+    <b:section class='navbar' id='navbar' maxwidgets='1' showaddelement='yes' />
+  </body>
+  <!-- Kết thúc phần hiển thị trên web -->
+
+</html>
