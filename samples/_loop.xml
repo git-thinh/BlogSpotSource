@@ -1,0 +1,100 @@
+﻿
+<![CDATA[
+The b:loop tag, or the loop tag, is a tag for iterating across a range of values and repeating the descendants of the b:loop tag for each iteration.
+Attributes
+values - Values to iterate across. This can be an expression for a data array, e.g. data:posts, or it can be a specific number range, e.g. '1 to 12'.
+var - Name of the variable which will hold the current value.
+index - Name of the variable which will hold the index of the current iteration.
+reverse - Boolean value for whether to iterate the values backward.
+Example usage
+A defined array
+The following example emits the post title and body for each of the posts in the data:posts dictionary.
+]]>
+
+<b:loop var='post' values='data:posts' index='i'>
+  <div>
+    <h3>
+      <b:eval expr='data:i + 1' />. <data:post.title />
+    </h3>
+    <div>
+      <data:post.body />
+    </div>
+  </div>
+</b:loop>
+
+<![CDATA[
+Example output might be:
+]]>
+
+<div>
+  <h3>
+    1. Second post ever
+  </h3>
+  <div>
+    This is the second post.
+  </div>
+</div>
+<div>
+  <h3>
+    2. Hello world
+  </h3>
+  <div>
+    This is my first post, ever!
+  </div>
+</div>
+
+<![CDATA[
+An arbitrary iteration
+In another example, we produce a list of labels searches, by iterating across an inline-defined set of labels and producing links for searching for that label.
+]]>
+
+<ul>
+  <b:loop var='label'
+          values='["cat", "dog", "mouse", "hyena"]'>
+    <li b:whitespace='remove'>
+      <a href='data:blog.searchUrl params { label: data:label }' b:whitespace='remove'>
+        <data:label />
+      </a>
+    </li>
+  </b:loop>
+</ul>
+
+<![CDATA[
+The resulting output, for myblog.blogspot.com, would be the following list.
+]]>
+
+<ul>
+  <li>
+    <a href='http://myblog.blogspot.com/search?label=cat'>cat</a>
+  </li>
+  <li>
+    <a href='http://myblog.blogspot.com/search?label=dog'>dog</a>
+  </li>
+  <li>
+    <a href='http://myblog.blogspot.com/search?label=mouse'>mouse</a>
+  </li>
+  <li>
+    <a href='http://myblog.blogspot.com/search?label=hyena'>hyena</a>
+  </li>
+</ul>
+
+<![CDATA[
+Tracking the index
+In this example, we flag the last item in the list with the class 'last'.
+]]>
+
+<b:loop var='post' values='data:posts' index='i'>
+  <div>
+    <b:class name='last' cond='data:i == data:posts.size + 1' />
+    <h3>
+      <data:post.title />
+    </h3>
+    <div>
+      <data:post.body />
+    </div>
+  </div>
+</b:loop>
+
+<![CDATA[
+Note that the index attribute is the zero-based offset into the loop.
+]]>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<b:if cond='data:title ==...'></b:if>
+<b:if cond='data:blog.searchQuery'></b:if>
+<b:if cond='data:blog.searchLabel'></b:if>
+<b:if cond='data:blog.url  == "data:blog.homepageUrl"'></b:if>
+<b:if cond='data:blog.url  == "http://thinh.iot.vn/2017/04/effective-seo-tips-for-blogger.html"'></b:if>
+
+<b:if cond='data:post.showBacklinks'></b:if>
+<b:if cond='data:displayname == "specific-name"'></b:if>
+<b:if cond='data:post.numComments == [number_here]'></b:if>
+<b:if cond='data:post.hasJumpLink'></b:if>
+<b:if cond='data:post.allowComments'></b:if>
+<b:if cond='data:blog.metaDescription'></b:if>
+<b:if cond='data:mobile'></b:if>
+<b:if cond='data:title'></b:if>
+<b:if cond='data:title != ""'></b:if>
+<b:if cond='data:showThumbnails == "false/true"'></b:if>
+<b:if cond='data:showSnippets == "false/true"'></b:if>
+<b:if cond='data:post.thumbnail'></b:if>
+<b:if cond='data:display == "list"'></b:if>
+<b:if cond='data:blog.url == data:label.url'></b:if>
+<b:if cond='data:showFreqNumbers'></b:if>
+<b:if cond='data:useImage'></b:if>
+
+<!--index | item | static_page | error_page -->
+<b:if cond='data:blog.pageType == "item"'>
+  
+  <title>
+    <data:blog.pageName/> - <data:blog.title/>
+  </title>
+
+  <div class="section_two">
+    <p>This is HTML Code</p>
+  </div>
+  
+  <style type="text/css">
+    /**CSS CODE HERE**/
+  </style>
+  
+</b:if>

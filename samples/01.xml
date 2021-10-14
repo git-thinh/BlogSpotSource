@@ -2,25 +2,15 @@
 <!DOCTYPE html>
 <html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
   <head>
-    <title>
-      Tiêu đề trang web
-    </title>
-
-    <!-- Bắt đầu viết Css cho web -->
-    <b:skin>
-      <![CDATA[
-	      /* Chèn Css vào đây */ 
-      ]]>
-    </b:skin>
+    <title><data:blog.pageTitle/></title>
+    <b:skin></b:skin>
   </head>
-
-  <!-- Bắt đầu phần hiển thị trên web -->
   <body>
-    Template của Blogger luôn phải có ít nhất 1 thẻ b:section thì mới có thể lưu Template lại được.
-    Thêm nội dung trang web của bạn vào đây
-
-    <b:section class='navbar' id='navbar' maxwidgets='1' showaddelement='yes' />
-
+    <b:section id="sidebar" class="sidebar" maxwidgets="" showaddelement="yes">
+      <b:widget id='CustomSearch1' title='Search' type='CustomSearch' locked='false'/>
+      <b:widget id='FollowByEmail1' title='Follow By Email' type='FollowByEmail' locked='false' />
+      <b:widget id='PopularPosts1' locked='false' title='Popular On Relatemein' type='PopularPosts'/>
+      <b:widget id='Label1' type='Label' locked='false' />
+    </b:section>
   </body>
-  <!-- Kết thúc phần hiển thị trên web -->
 </html>
