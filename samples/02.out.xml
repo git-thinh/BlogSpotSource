@@ -1,1 +1,117 @@
-﻿
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+    <b:include data='blog' name='all-head-content'/>
+    <b:if cond='data:blog.url == data:blog.homepageUrl'>
+      <title>
+        <data:blog.title/>
+      </title>
+    </b:if>
+    <b:if cond='data:blog.pageType == &quot;index&quot;'>
+      <title>
+        <data:blog.pageTitle/>
+      </title>
+      <meta content='Mô tả về blog của bạn' name='description'/>
+      <meta content='Các từ khóa trên blog của bạn' name='keywords'/>
+      <b:else/>
+      <title>
+        <data:blog.pageName/> - <data:blog.title/>
+      </title>
+      <meta expr:content='data:blog.pageName + &quot; - Mô tả về blog của bạn&quot;' name='description'/>
+      <meta expr:content='data:blog.pageName + &quot;, Các từ khóa trên blog của bạn&quot;' name='keywords'/>
+    </b:if>
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
+    <b:skin><![CDATA[]]></b:skin>
+  </head>
+  <body>
+    <h1>
+      pageType = <data:blog.pageType/> ; mobile = <data:mobile/>
+      <br/>
+      url = <data:blog.url/>
+      <br/>
+      searchQuery = <data:blog.searchQuery/>
+      <br/>
+      blog.searchLabel = <data:blog.searchLabel/>
+    </h1>
+    <h3>
+      <a href='/'>Home</a>
+    </h3>
+    <div>
+      <b:if cond='data:blog.pageType == &quot;item&quot;'>
+        <div class='ui-post'>
+          <h2>
+            <data:blog.pageName/> - <data:blog.title/>
+          </h2>
+          <div>
+            <data:post.body/>
+          </div>
+        </div>
+        <hr/>
+        <hr/>
+        <style type='text/css'>
+          .ui-post{ border:1px solid red; display:inline-block; padding:9px; }
+        </style>
+      </b:if>
+      <b:section class='sidebar' id='sidebar' maxwidgets='' showaddelement='yes'>
+        <b:widget id='Label1' locked='false' title='Labels' type='Label' version='1'>
+          <b:widget-settings>
+            <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+            <b:widget-setting name='display'>LIST</b:widget-setting>
+            <b:widget-setting name='selectedLabelsList'/>
+            <b:widget-setting name='showType'>ALL</b:widget-setting>
+            <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
+              <ul>
+                <b:loop values='data:labels' var='label'>
+                  <li>
+                    <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'>
+                      <data:label.name/>
+                    </a>
+                    <b:if cond='data:showFreqNumbers'>
+                      <span dir='ltr'>
+                        (<data:label.count/>)
+                      </span>
+                    </b:if>
+                  </li>
+                </b:loop>
+              </ul>
+              <b:include name='quickedit'/>
+            </div>
+          </b:includable>
+        </b:widget>
+        <b:widget id='PopularPosts1' locked='false' title='Popular On Relatemein' type='PopularPosts' version='1'>
+          <b:widget-settings>
+            <b:widget-setting name='numItemsToShow'>10</b:widget-setting>
+            <b:widget-setting name='showThumbnails'>true</b:widget-setting>
+            <b:widget-setting name='showSnippets'>true</b:widget-setting>
+            <b:widget-setting name='timeRange'>LAST_YEAR</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <div class='widget-content popular-posts'>
+              <ul>
+                <b:loop values='data:posts' var='post'>
+                  <li>
+                    <a expr:href='data:post.href'>
+                      <data:post.title/>
+                    </a>
+                    <h3>
+                      <img expr:src='data:post.featuredImage'/>
+                      <data:post.featuredImage/>
+                    </h3>
+                    <div class='item-snippet'>
+                      <data:post.snippet/>
+                    </div>
+                  </li>
+                </b:loop>
+              </ul>
+              <b:include name='quickedit'/>
+            </div>
+          </b:includable>
+        </b:widget>
+      </b:section>
+    </div>
+  </body>
+</html>

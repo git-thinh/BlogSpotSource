@@ -1,4 +1,9 @@
 ﻿
+<b:section id="sidebar" class="sidebar" maxwidgets="" showaddelement="yes">
+  <b:widget id='PopularPosts1' locked='false' title='Popular On Relatemein' type='PopularPosts'/>
+  <b:widget id='Label1' type='Label' locked='false' />
+</b:section>
+
 <![CDATA[
 The b:loop tag, or the loop tag, is a tag for iterating across a range of values and repeating the descendants of the b:loop tag for each iteration.
 Attributes

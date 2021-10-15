@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<b:includable id='main'>
+  <b:loop var='bv' index='index' values='data:posts'>
+    <b:include name='baiviet' data='bv' cond='index'
+    < 10'/>
+  </b:loop>
+</b:includable>
+<b:includable id='baiviet' var='baiviet'>
+  Tiêu đề: <data:baiviet.title/>
+</b:includable>
+
+
+<b:widget id='Blog1' locked='true' title='Bài đăng trên Blog' type='Blog'>
+  <b:includable id='main' var='top'>
+    <b:loop values='data:posts' var='post'>
+      <data:post.title/>
+    </b:loop>
+  </b:includable>
+</b:widget>

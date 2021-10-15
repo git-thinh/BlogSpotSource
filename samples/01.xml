@@ -6,11 +6,20 @@
     <b:skin></b:skin>
   </head>
   <body>
-    <b:section id="sidebar" class="sidebar" maxwidgets="" showaddelement="yes">
-      <b:widget id='CustomSearch1' title='Search' type='CustomSearch' locked='false'/>
-      <b:widget id='FollowByEmail1' title='Follow By Email' type='FollowByEmail' locked='false' />
-      <b:widget id='PopularPosts1' locked='false' title='Popular On Relatemein' type='PopularPosts'/>
-      <b:widget id='Label1' type='Label' locked='false' />
+    <b:section id="MainPost" class="ui-main" maxwidgets="" showaddelement="yes">
+      <b:widget id='Blog1' locked='true' title='Bài đăng trên Blog' type='Blog'>
+        <b:includable id='main' var='top'>
+          <b:loop values='data:posts' var='post'>
+            <div>
+              <h5>
+                <a expr:href='data:post.url'>
+                  <data:post.title/>
+                </a>
+              </h5>
+            </div>
+          </b:loop>
+        </b:includable>
+      </b:widget>
     </b:section>
   </body>
 </html>

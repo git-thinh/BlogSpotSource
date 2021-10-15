@@ -12,6 +12,7 @@
 <b:if cond='data:post.hasJumpLink'></b:if>
 <b:if cond='data:post.allowComments'></b:if>
 <b:if cond='data:blog.metaDescription'></b:if>
+<b:if cond='data:post.isFirstPost'></b:if>
 <b:if cond='data:mobile'></b:if>
 <b:if cond='data:title'></b:if>
 <b:if cond='data:title != ""'></b:if>
@@ -22,20 +23,20 @@
 <b:if cond='data:blog.url == data:label.url'></b:if>
 <b:if cond='data:showFreqNumbers'></b:if>
 <b:if cond='data:useImage'></b:if>
+<b:if cond='!data:post.allowComments'></b:if>
 
 <!--index | item | static_page | error_page -->
+<b:if cond='data:blog.pageType == "index" and data:post.allowComments'></b:if>
+<b:if cond='data:blog.pageType in {"index", "archive"}'></b:if>
 <b:if cond='data:blog.pageType == "item"'>
-  
-  <title>
+  <h1>
     <data:blog.pageName/> - <data:blog.title/>
-  </title>
-
-  <div class="section_two">
-    <p>This is HTML Code</p>
-  </div>
-  
+  </h1>
   <style type="text/css">
     /**CSS CODE HERE**/
   </style>
-  
 </b:if>
+
+<a expr:class='data:post.allowComments ? "comments" : "no-comments"'></a>
+<div expr:class='data:post.thumbnailUrl ? "post-co-thumbnail" : "post-khong-thumbnail"'></div>
+<div expr:style='"max-width: " + (data:width + 10) + "px;"'>
