@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
+<!--
+Equal                : ==, eq
+Not Equal            : !=, neq
+Less                 : <, lt
+Less than or Equal   : <=, lte
+Greater              : >, gt
+Greater than or equal: >=, gte
+-->
+
 <!-- Show a Flower image if the post has the label flower -->
 <b:if cond='data:post.labels any (l => l.name == "Flower")'>
   <img src='/img/flower.jpg' />
@@ -130,3 +139,36 @@ This lambda operator returns the number of items of an array which returns true 
     </b:if>
   </b:loop>
 </b:loop>
+
+<b:with value='data:widgets.AdSense count (w => w.sectionId != "ads")' var='numMobileAds'>
+  <!-- item -->
+</b:with>
+<b:with value='"Type Food"' var='type'>
+  <b:with value='["Meat","Fruit","Vegetable"]' var='Food'>
+    <data:type/>
+    <ul>
+      <b:loop values='data:Food' var='loop'>
+        <li>
+          <data:loop/>
+        </li>
+      </b:loop>
+    </ul>
+  </b:with>
+</b:with>
+<b:with value='{ Name: "Foo", Gender: "Male" }' var='OBJ1'>
+  <b:with value='{ Name: "Bar", Gender: "Female" }' var='OBJ2'>
+    <b:with value='{ foo: data:OBJ1, bar: data:OBJ2, baz: "unknown" }' var='OBJECT'>
+      <ol>
+        <li>
+          Name: <data:OBJECT.foo.Name/> | Gender: <data:OBJECT.foo.Gender/>
+        </li>
+        <li>
+          Name: <data:OBJECT.bar.Name/> | Gender: <data:OBJECT.bar.Gender/>
+        </li>
+        <li>
+          Name: <data:OBJECT.baz/>
+        </li>
+      </ol>
+    </b:with>
+  </b:with>
+</b:with>

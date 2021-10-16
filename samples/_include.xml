@@ -1,5 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Đơn giản mà nói những thẻ này là những thẻ mình tạo ra để lưu trữ những 
+"nội dung" của chúng ta, mà khi ta muốn thì cần chỉ gọi nó ra để muốn sử dụng. 
+(Đối với những bạn học CNTT thì nói đơn giản nó là "hàm").
 
+=> HÀM = Sử dụng bạn muốn sử dụng nó ở nhiểu nơi khác nhau trong trang
+
+- id (Bắt buộc): Tên của includable, cần vì khi muốn sử dụng phải gọi tên nó ra.
+- var (Tùy chọn):  Giá trị hoặc dữ liệu truyền vào thẻ includable.
+
+<b:includable id='Tên' var='Giá_Trị'>
+  [Nội dung]
+</b:includable>
+
+* CÁCH SỬ DỤNG
+
+Khi muốn gọi thẻ includable (HÀM) đã tạo trước đó, ta sử dụng thẻ sau
+
+<b:include name='Tên' data='Giá_Trị'/>
+
+name (bắt buộc): là "id" của thẻ includable.
+data : Giá trị được tạo ở thẻ include trên sẽ được chuyển qua để sử dụng ở đây, bạn có thể tùy ý đặt tên.
+
+Ví dụ ở đây mình sẽ lấy ra tiêu đề bài viết và địa chỉ url của bài viết đó bằng cách sử dụng nhiều các hàm includable
+
+<b:includable id='main' var='top'> //Thẻ này có trong mọi template, nó là nơi thêm vào bài viết nhận xét.
+   <b:loop var='i' values='posts'> //Mình sẽ nói về cái loops này ở bài khác :)
+      <b:include name='kslzone' data='i'/>
+   </b:loop>
+</b:includable>
+
+<b:includable id='kslzone' var='p'>
+   Title: <data:p.title/> // Bài khác luôn nhé :)
+   <b:include name='showURL' data='p.url'/>
+</b:includable>
+
+<b:includable id='showURL' var='u'>
+   <data:u/>
+</b:includable>
+
+Thực sự là rất khó hiểu ở cái var, và data phải không, 
+đơn giản nó chỉ là biến bạn tạo ra để gọi dữ liệu thôi, 
+và cái dữ liệu nó thì tùy thuộc vào widget mà thẻ includable này nằm trong.
+
+Thực sự chúng không cần thiết đối với nhiều người, 
+vì nội dung bên trong thẻ includable có thể không 
+liên quan đến lập trình bên trong Blogger, các chỉ 
+cần sử dụng nó một cách đơn giản như sau, 
+ví dụ mình chèn một đoan code html vào đầu widget blog
+
+<b:includable id='main' var='top'> //Thẻ này có trong mọi template, nó là nơi thêm vào bài viết nhận xét.
+      <b:include name='kslzone'/>
+</b:includable>
+
+<b:includable id='kslzone'>
+ Code html của bạn
+</b:includable>
+
+
+-->
+
+
+<!--/////////////////////////////////////////////////
+-->
 <b:includable id='main'>
   <b:loop var='bv' index='index' values='data:posts'>
     <b:include name='baiviet' data='bv' cond='index < 10'/>

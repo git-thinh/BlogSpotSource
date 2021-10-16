@@ -1,0 +1,11 @@
+﻿
+<div>
+  <b:attr cond='data:view.isPost' name='style' value='background: red'/>
+</div>
+<div style='background: red'></div>
+
+<a>
+	<b:attr name='href' expr:value='data:label.url'/>
+	<b:attr name='target' value='_blank'/>
+	<span>TITLE</span>
+</a>

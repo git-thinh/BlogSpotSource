@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<b:switch var='EXPRESSION'>
+  <b:case value='EXPRESSION1'/>
+  <!-- execute case match VALUE1 code block -->
+  <b:case value='EXPRESSION2'/>
+  <!-- execute case match  VALUE2 code block -->
+  <b:default/>
+  <!-- execute case default code block if all case doesn't meet. -->
+</b:switch>
+
+<ul>
+  <b:loop values='["Fruit","Food","Other"]' var='MyList'>
+    <li>
+      <data:MyList/>
+    </li>
+    <b:switch var='data:MyList'>
+      <b:case value='Fruit'/>
+      <b:loop values='["Apple","Mango","Orange"]' var='Fruit'>
+        <ul>
+          <li>
+            <data:Fruit/>
+          </li>
+          <b:switch var='data:Fruit'>
+            <b:case value='Apple'/>
+            <b:loop values='["Gala","Fuji"]' var='Kind'>
+              <ul>
+                <li>
+                  <data:Kind/>
+                </li>
+              </ul>
+            </b:loop>
+          </b:switch>
+        </ul>
+      </b:loop>
+      <b:case value='Food'/>
+      <b:loop values='["Meat","Vegetable"]' var='Food'>
+        <ul>
+          <li>
+            <data:Food/>
+          </li>
+        </ul>
+      </b:loop>
+      <b:default/>
+      <b:loop values='["Milk","Seafood","Juice","Banana"]' var='Unlisted'>
+        <ul>
+          <li>
+            <data:Unlisted/>
+          </li>
+        </ul>
+      </b:loop>
+    </b:switch>
+  </b:loop>
+</ul>
+
+

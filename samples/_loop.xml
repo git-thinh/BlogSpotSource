@@ -1,4 +1,10 @@
-﻿
+﻿<b:loop index='STRING'
+        values='ARRAY'
+        var='STRING'
+        reverse='BOOLEAN'>
+  <!-- Repeat -->
+</b:loop>
+
 <b:section id="sidebar" class="sidebar" maxwidgets="" showaddelement="yes">
   <b:widget id='PopularPosts1' locked='false' title='Popular On Relatemein' type='PopularPosts'/>
   <b:widget id='Label1' type='Label' locked='false' />

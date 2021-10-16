@@ -52,3 +52,6 @@ EXAMPLE WITH IMAGE URL
 <img src='https://lh3.googleusercontent.com/proxy/ETVZuT6pvuEx7Pp8D5gIox' 
 expr:srcset='sourceSet("https://lh3.googleusercontent.com/proxy/ETVZuT6pvuEx7Pp8D5gIox", [256, 512, 945, 1684])'/>
 
+<b:with value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 72, "1:1") : data:post.thumbnail' var='image'>
+    <img alt='' border='0' expr:src='data:image'/>
+</b:with>

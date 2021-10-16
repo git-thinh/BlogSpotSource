@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<b:with value='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 72, "1:1") : data:post.thumbnail' var='image'>
+  <img alt='' border='0' expr:src='data:image'/>
+</b:with>
+
+<b:with value='data:widgets.AdSense count (w => w.sectionId != "ads")' var='numMobileAds'>
+  <!-- item -->
+</b:with>
+
+<b:with value='"Type Food"' var='type'>
+  <b:with value='["Meat","Fruit","Vegetable"]' var='Food'>
+    <data:type/>
+    <ul>
+      <b:loop values='data:Food' var='loop'>
+        <li>
+          <data:loop/>
+        </li>
+      </b:loop>
+    </ul>
+  </b:with>
+</b:with>
+
+<b:with value='{ Name: "Foo", Gender: "Male" }' var='OBJ1'>
+  <b:with value='{ Name: "Bar", Gender: "Female" }' var='OBJ2'>
+    <b:with value='{ foo: data:OBJ1, bar: data:OBJ2, baz: "unknown" }' var='OBJECT'>
+      <ol>
+        <li>
+          Name: <data:OBJECT.foo.Name/> | Gender: <data:OBJECT.foo.Gender/>
+        </li>
+        <li>
+          Name: <data:OBJECT.bar.Name/> | Gender: <data:OBJECT.bar.Gender/>
+        </li>
+        <li>
+          Name: <data:OBJECT.baz/>
+        </li>
+      </ol>
+    </b:with>
+  </b:with>
+</b:with>
