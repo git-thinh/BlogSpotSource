@@ -1,0 +1,49 @@
+﻿Blogger URL Constructor Operator [path]
+Path will create new url by combining URL and string character.
+
+EXAMPLE
+
+<a expr:href='data:blog.url path "/search/label/foo"'>
+    <span>Label Foo</span>
+</a>
+
+The result of url is https://example.blogspot.com/search/label/Foo
+
+Blogger URL Constructor Operator [appendParams]
+appendParams operator allows you to add additional parameters to an url.
+
+EXAMPLE
+
+<a expr:href='data:blog.searchUrl appendParams { label: "Foo" }'>
+    <span>Label Foo</span>
+</a>
+
+The result of url is https://example.blogspot.com/search?label=Foo
+
+Blogger URL Constructor Operator [params]
+params works like the operator appendParams, but with the difference that it does replaces all the existing parameters in the url if any.
+
+EXAMPLE
+
+<a expr:href='data:blog.searchUrl params { m: "1" }'>
+    <span>Label Foo</span>
+</a>
+
+The result of url is https://example.blogspot.com/?m=1. In this object, if we use appendParams operator, the result maybe ?m=0&m=1.
+
+Blogger URL Constructor Operator [fragment]
+The operator fragment can add or replace a fragment (#). A fragment is an internal page reference, sometimes called anchor. It usually appears at the end of a URL and begins with a hash (#) character followed by an identifier. It refers to a section within a web page. For example an Link with #foo in the end of a URL will go or scroll our view to section or element such as <div>, etc with id='foo'.
+
+EXAMPLE
+
+<a expr:href='fragment "top"'>
+    <span>Go to Top</span>
+</a>
+
+The URI create #top which is going scroll to top
+
+EXAMPLE COMBINED OPERATOR
+
+<a expr:href='data:blog.url path "/search/label/Foo" params { m: "1", max-results: "16" }'>
+  <span>Label Foo</span>
+</a>

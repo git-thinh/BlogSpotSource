@@ -2,8 +2,7 @@
 
 <b:includable id='main'>
   <b:loop var='bv' index='index' values='data:posts'>
-    <b:include name='baiviet' data='bv' cond='index'
-    < 10'/>
+    <b:include name='baiviet' data='bv' cond='index < 10'/>
   </b:loop>
 </b:includable>
 <b:includable id='baiviet' var='baiviet'>

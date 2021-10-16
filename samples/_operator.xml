@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- Show a Flower image if the post has the label flower -->
+<b:if cond='data:post.labels any (l => l.name == "Flower")'>
+  <img src='/img/flower.jpg' />
+</b:if>
+
+<b:section class='Test1' id='Test1' maxwidgets='' showaddelement='no'>
+  <b:widget id='Blog2' locked='true' title='Blog Posts' type='Blog' version='1' visible='true'>
+    <b:includable id='main'>
+
+      <b:loop values='data:posts' var='post'>
+        <h1>Post found</h1>
+
+        <b:if cond='data:post.labels any (label  => label.name == "flower")'>
+          <h1>Flower!</h1>
+        </b:if>
+
+      </b:loop>
+    </b:includable>
+  </b:widget>
+</b:section>
+
+<b:if cond='data:posts any (p => p.title  != "bob")'>
+  <h1>Post found</h1>
+</b:if>
+
+<b:if cond='data:blog.pageType == "index"'>
+  <b:if cond='data:posts any (post => post.author != "Hamza Dhamiya")'>
+    <!--Do some work here-->
+  </b:if>
+</b:if>
+
+<b:if cond='data:post.labels any (l => l.name in {"labela","labelb"})'>
+</b:if>
+
+<b:if cond='data:post.labels all (label => label.name in {"HTML","CSS","Javascript"})'>
+  <!--Do some work here-->
+</b:if>
+<b:if cond='data:post.labels all (l => l.name not in {"labela","labelb"})'>
+</b:if>
+<!--
+COUNT
+This lambda operator returns the number of items of an array which returns true in lambda expression. By taking the above example -->
+<b:if cond='data:post.labels count (label => label.name in {"HTML","CSS","Javascript"})' var='count'>
+  <!--Do some work here-->
+</b:if>
+<b:if cond='data:post.labels count (l => l.name not in {"labela","labelb"})' var='count'>
+  <data:post.title/> (<data:count/>)
+</b:if>
+
+
+<b:loop var='post' values='data:posts filter (post => post.author == "Hamza Dhamiya")'>
+  <b:include data='post' name='post'/>
+</b:loop>
+
+<b:loop values='data:posts filter (p => p.id  != 0)'  var='post'>
+  <h1>
+    Post found: <data:post.title/>
+  </h1>
+</b:loop>
+
+<b:loop values='data:posts filter (p => p.id  != 0)'  var='post'>
+  <h1>
+    Post found: <data:post.title/>
+  </h1>
+</b:loop>
+
+<b:loop values='data:posts first(p => p.timestamp  == "4.2.09")'  var='post'>
+  <h1>
+    Post found: <data:post.title/>
+  </h1>
+</b:loop>
+
+<b:loop values='data:post.labels map (label => "#" + label.name)' var='label'>
+  <a expr:href='data:label.url'>
+    <data:label/>
+  </a>
+</b:loop>
+
+<b:loop values='data:post.labels map (l=> "#" + l.name)' var='label'>
+  <h1>
+    <data:label/>
+  </h1>
+</b:loop>
+
+<b:eval expr='"Foo" in ["Foo","Bar","Baz"]'/>
+
+<b:eval expr='["Foo","Bar","Baz"] contains "Foo"'/>
+
+<b:if cond='data:post.body contains "Foo"'>
+  <!-- item -->
+</b:if>
+
+<b:eval expr='data:posts.size in [7,20,50] and data:view.isMultipleItems'/>
+
+<b:eval expr='data:posts count (p => p.labels any (l => l.name contains "Foo"))'/>
+
+<b:eval expr='data:view.search.label in ["Foo","Bar"] ? "Welcome to Label Foo" : "Welcome to Label Bar"'/>
+
+<!--Blogger Range Operator [LIMIT], [TAKE], [OFFSET], [SKIP], [TO]-->
+
+<b:loop values='["foo","bar","baz"] limit 2' var='item'>
+  <data:item/>
+</b:loop>
+<b:loop values='data:posts limit 2' var='item'>
+  <a expr:href='data:post.url'>
+    <data:post.title/>
+  </a>
+</b:loop>
+
+<b:loop values='["foo","bar","baz"] offset 2' var='item'>
+  <data:item/>
+</b:loop>
+<b:loop values='data:posts skip 2' var='item'>
+  <a expr:href='data:post.url'>
+    <data:post.title/>
+  </a>
+</b:loop>
+
+<b:loop values='3 to 5' var='item'>
+  <data:item/>
+</b:loop>
+<b:loop values='2 to 4' var='range'>
+  <b:loop index='number' values='data:posts' var='post'>
+    <b:if cond='data:number == data:range'>
+      <a expr:href='data:post.url'>
+        <data:post.title/>
+      </a>
+    </b:if>
+  </b:loop>
+</b:loop>

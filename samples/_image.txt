@@ -1,0 +1,54 @@
+﻿Blogger resizeImage and sourceSet Syntax
+
+Resize an images:	resizeImage(imageURL, newSize, "Ratio")
+Create responsive images:	sourceSet(imageURL, [array newSize], "Ratio")
+
+Supported imageURL: URLs for images hosted by Google through Blogger , Picasa , GooglePhotos, 
+and thumbnails of YouTube can be used with these parameters.
+
+* Blogger Operator [resizeImage]
+	- imageURL can be from blogger expression or Image URL listed on supported image url above. 
+	If used with Image URL as value, it must be wrapped with Double Quote'
+	- newSize is the new size based on width
+	- "Ratio" wrapped with double quote. Is the integer ratio of the image 
+	"1:1" or "4:3" or "16:9" or "1200:630", etc. If this ratio is present, 
+	the image will be cropped. The right hand ratio cannot be higher 
+	than the left hand such as "320:640".
+
+* Blogger Operator [resizeImage] Example
+- WITH EXPRESSION:
+	<img expr:src='resizeImage(data:post.featuredImage, 128, "1:1")'/>
+
+Try to insert above code right below <b:includable id='post' var='post'> 
+The result of operation is, image will be cropped as square ratio 128x128.
+
+WITH IMAGE URL
+
+<img expr:src='resizeImage("https://lh3.googleusercontent.com/proxy/ETVZuT6pvuEx7Pp8D5gIox", 640, "640:240")'/>
+URL of the image is wrapped with double quotes, 
+The result of operation is, image will be resized 
+to 640px width and cropped to 640x240px.
+
+Blogger Operator [sourceSet]
+sourceSet is operator used in srcset attribute, 
+is HTML attribute which allows us to tell the 
+Browser to specify different kind of images for different screen-sizes 
+or orientation or display-types based on different condition.
+
+<img> tag can't work alone with srcset attribute. 
+we still need the src attribute. In short, 
+we have two attribute in single <img> tag, src and srcset.
+
+The operator sourceSet syntax almost like the operator resizeImage, 
+the different is on the newSize part. 
+In this part we set multiple image width dimension separated by comma.
+
+EXAMPLE WITH EXPRESSION
+
+<img expr:src='data:post.featuredImage' expr:srcset='sourceSet(data:post.featuredImage, [256,512,945,1684])'/>
+
+EXAMPLE WITH IMAGE URL
+
+<img src='https://lh3.googleusercontent.com/proxy/ETVZuT6pvuEx7Pp8D5gIox' 
+expr:srcset='sourceSet("https://lh3.googleusercontent.com/proxy/ETVZuT6pvuEx7Pp8D5gIox", [256, 512, 945, 1684])'/>
+

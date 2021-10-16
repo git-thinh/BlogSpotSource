@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<b:eval expr='EXPRESSION'/>
+
+<button class='subscribe-button pill-button'>
+  <b:eval expr='data:messages.subscribe + " to " + data:blog.title'/>
+</button>
+
+<b:eval expr='data:view.isHomepage ? data:blog.pageName : data:blog.pageTitle'/>
+
+<b:eval expr='data:post.body snippet {length: 250, links: false, linebreaks: false}'/>
+
+<!--
+Resize an image with an operator call
+The following example emits the post title and body for each of the posts in the data:posts dictionary.
+-->
+
+<style>
+  .post-thumbnail {
+    background-image: url(<b:eval expr='resizeImage(data:post.featuredImage, 385).cssEscaped' />);
+  }
+</style>
+
+
+
