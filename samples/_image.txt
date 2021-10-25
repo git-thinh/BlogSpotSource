@@ -25,6 +25,7 @@ The result of operation is, image will be cropped as square ratio 128x128.
 WITH IMAGE URL
 
 <img expr:src='resizeImage("https://lh3.googleusercontent.com/proxy/ETVZuT6pvuEx7Pp8D5gIox", 640, "640:240")'/>
+
 URL of the image is wrapped with double quotes, 
 The result of operation is, image will be resized 
 to 640px width and cropped to 640x240px.

@@ -24,14 +24,14 @@ data : Giá trị được tạo ở thẻ include trên sẽ được chuyển 
 
 Ví dụ ở đây mình sẽ lấy ra tiêu đề bài viết và địa chỉ url của bài viết đó bằng cách sử dụng nhiều các hàm includable
 
-<b:includable id='main' var='top'> //Thẻ này có trong mọi template, nó là nơi thêm vào bài viết nhận xét.
-   <b:loop var='i' values='posts'> //Mình sẽ nói về cái loops này ở bài khác :)
+<b:includable id='main' var='top'> // Thẻ này có trong mọi template, nó là nơi thêm vào bài viết nhận xét.
+   <b:loop var='i' values='posts'>
       <b:include name='kslzone' data='i'/>
    </b:loop>
 </b:includable>
 
 <b:includable id='kslzone' var='p'>
-   Title: <data:p.title/> // Bài khác luôn nhé :)
+   Title: <data:p.title/>
    <b:include name='showURL' data='p.url'/>
 </b:includable>
 
@@ -39,8 +39,7 @@ Ví dụ ở đây mình sẽ lấy ra tiêu đề bài viết và địa chỉ 
    <data:u/>
 </b:includable>
 
-Thực sự là rất khó hiểu ở cái var, và data phải không, 
-đơn giản nó chỉ là biến bạn tạo ra để gọi dữ liệu thôi, 
+- var là biến bạn tạo ra để gọi dữ liệu, 
 và cái dữ liệu nó thì tùy thuộc vào widget mà thẻ includable này nằm trong.
 
 Thực sự chúng không cần thiết đối với nhiều người, 
