@@ -1,0 +1,102 @@
+﻿/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #cac2c2 !important;
+    border-radius: 0 !important;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #cac2c2 !important;
+    }
+
+body {
+    min-height: 100vh;
+    background-color: #202124;
+    color: #fafafa;
+}
+
+a,
+.btn,
+.btn-toggle {
+    color: #fafafa;
+    text-decoration: none;
+}
+
+    a:hover,
+    .btn:hover,
+    .btn-toggle:hover {
+        color: #0a88f3;
+    }
+
+main {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+    width: 100%;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.btn-toggle {
+    display: inline-flex;
+    align-items: center;
+    padding: .25rem .5rem;
+    font-weight: 600;
+    border: 0;
+}
+
+    .btn-toggle:hover {
+        background-color: #d2f4ea;
+    }
+
+    .btn-toggle::before {
+        content: "\f285";
+        display: inline-block;
+        font-family: bootstrap-icons !important;
+        font-style: normal;
+        font-weight: normal !important;
+        font-variant: normal;
+        text-transform: none;
+        vertical-align: -0.125 em;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        width: 1.25em;
+        line-height: 0;
+        transition: transform .35s ease;
+        transform-origin: .5em 50%;
+    }
+
+    .btn-toggle[aria-expanded="true"]::before {
+        transform: rotate(90deg);
+    }
+
+.btn-toggle-nav a {
+    display: inline-flex;
+    padding: .1875rem .5rem;
+    margin-top: .125rem;
+    margin-left: 1.25rem;
+    text-decoration: none;
+}
+
+    .btn-toggle-nav a:hover,
+    .btn-toggle-nav a:focus {
+        background-color: #d2f4ea;
+    }
