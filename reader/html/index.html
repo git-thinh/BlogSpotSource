@@ -1,8 +1,8 @@
-﻿
-<!doctype html>
-<html lang="en">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:js='false' b:layoutsVersion='3' b:responsive='true' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <meta content='width=device-width, initial-scale=1' name='viewport' />
     <title>Reader</title>
     <meta name="theme-color" content="#7952b3" />
@@ -12,101 +12,78 @@
     <link crossorigin='anonymous' href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' rel='stylesheet' />
 
     <link href="style.css" rel="stylesheet" />
+    <b:skin><![CDATA[]]></b:skin>
 </head>
 <body>
+    <h1 class="visually-hidden">Sidebars examples</h1>
 
     <main>
-        <h1 class="visually-hidden">Sidebars examples</h1>
-
-
-        <div class="flex-shrink-0 p-3" style="width: 280px;">
+        <div id="ui-left" class="flex-column flex-shrink-0 p-3 position-fixed h-100" style="width:280px;">
             <div class="d-inline-block mb-3 w-100">
                 <img class="w-100 h-auto" src="https://i.ytimg.com/vi/a7U7N2141T0/maxresdefault.jpg" />
             </div>
             <a href="/" class="d-flex align-items-center pb-3 mb-3 text-decoration-none border-bottom">
-                <i class="bi bi-book me-2 fs-3"></i>
                 <span class="fs-3 fw-semibold">Đạo Đức Kinh</span>
             </a>
-            <ul class="list-unstyled ps-0">
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                        Home
+            <ul class="list-unstyled ps-0 mb-0">
+                <li>
+                    <button class="btn px-2">
+                        <i class="bi bi-folder2-open"></i>
+                        Chuyên mục
                     </button>
-                    <div class="collapse show" id="home-collapse">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="rounded">Overview</a></li>
-                            <li><a href="#" class="rounded">Updates</a></li>
-                            <li><a href="#" class="rounded">Reports</a></li>
-                        </ul>
-                    </div>
                 </li>
                 <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                        Dashboard
+                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#article-collapse" aria-expanded="true">
+                        Bài viết
                     </button>
-                    <div class="collapse" id="dashboard-collapse">
+                    <div class="collapse show overflow-auto" id="article-collapse" style="max-height:300px;">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="rounded">Overview</a></li>
-                            <li><a href="#" class="rounded">Weekly</a></li>
-                            <li><a href="#" class="rounded">Monthly</a></li>
-                            <li><a href="#" class="rounded">Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                        Orders
-                    </button>
-                    <div class="collapse" id="orders-collapse">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="rounded">New</a></li>
-                            <li><a href="#" class="rounded">Processed</a></li>
-                            <li><a href="#" class="rounded">Shipped</a></li>
-                            <li><a href="#" class="rounded">Returned</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="border-top my-3"></li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                        Account
-                    </button>
-                    <div class="collapse" id="account-collapse">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="rounded">New...</a></li>
-                            <li><a href="#" class="rounded">Profile</a></li>
-                            <li><a href="#" class="rounded">Settings</a></li>
-                            <li><a href="#" class="rounded">Sign out</a></li>
+                            <li><a href="#" class="rounded">Tập 1 ...</a></li>
+                            <li><a href="#" class="rounded">Tập 2 ...</a></li>
+                            <li><a href="#" class="rounded">Tập 1 ...</a></li>
+                            <li><a href="#" class="rounded">Tập 2 ...</a></li>
+                            <li><a href="#" class="rounded">Tập 1 ...</a></li>
+                            <li><a href="#" class="rounded">Tập 2 ...</a></li>
+                            <li><a href="#" class="rounded">Tập 1 ...</a></li>
+                            <li><a href="#" class="rounded">Tập 2 ...</a></li>
+                            <li><a href="#" class="rounded">Tập 1 ...</a></li>
+                            <li><a href="#" class="rounded">Tập 2 ...</a></li>
+                            <li><a href="#" class="rounded">Tập 1 ...</a></li>
+                            <li><a href="#" class="rounded">Tập 2 ...</a></li>
+                            <li><a href="#" class="rounded">Tập 1 ...</a></li>
+                            <li><a href="#" class="rounded">Tập 2 ...</a></li>
+                            <li><a href="#" class="rounded">Tập 1 ...</a></li>
+                            <li><a href="#" class="rounded">Tập 2 ...</a></li>
+                            <li><a href="#" class="rounded">Tập 1 ...</a></li>
+                            <li><a href="#" class="rounded">Tập 2 ...</a></li>
                         </ul>
                     </div>
                 </li>
             </ul>
+            <div class="flex-fill flex-shrink-0 border"></div>
         </div>
-
-        <div style="width:20px;"></div>
-
-        <div class="d-flex flex-column" style="width:calc(100% - 300px)">
-            <div class="p-3 border-bottom">
-                <nav aria-label="breadcrumb">
+        <div id="ui-left-bg" class="" style="width:280px;"></div>
+        <div id="ui-body" class="d-flex flex-column flex-fill ps-md-2">
+            <div class="py-md-2 py-1 border-bottom d-flex flex-row">
+                <button class="btn"><i class="bi bi-chevron-left"></i></button>
+                <nav aria-label="breadcrumb" class="flex-fill">
                     <ol class="breadcrumb m-0">
                         <li class="breadcrumb-item">
-                            <button class="btn p-0"><i class="bi bi-list fs-3"></i></button>
+                            <button class="ms-2 btn p-0 d-block d-md-none"><i class="bi bi-list fs-3"></i></button>
                         </li>
-                        <li class="breadcrumb-item pt-2 text-uppercase">
-                            <a href="/">
-                                <i class="bi bi-book me-1"></i>
-                                Đạo Đức Kinh
-                            </a>
+                        <li class="breadcrumb-item pt-2 text-uppercase fw-bold d-none d-md-inline-block">
+                            <a href="/">Đạo Đức Kinh</a>
                         </li>
                         <li class="breadcrumb-item pt-2" aria-current="page">CHƯƠNG 21 HƯ TÂM 虛 心</li>
                     </ol>
                 </nav>
+                <button class="btn"><i class="bi bi-chevron-right"></i></button>
             </div>
 
             <div class="overflow-auto">
-                <div class="py-3 pe-5" style="max-width:600px;">
+                <div class="py-3 ps-1 pe-md-3 pe-0">
                     <p><strong>Hán văn:</strong></p>
-                    <p>孔 德 之 容,&nbsp;惟 道 是 從.&nbsp;道 之 為 物,&nbsp;惟 恍 惟 惚.&nbsp;惚 兮&nbsp;恍 兮,&nbsp;其 中 有 象.&nbsp;恍 兮 惚 兮,&nbsp;其 中 有 物;&nbsp;窈 兮 冥 兮,&nbsp;其 中&nbsp;有 精.&nbsp;其 精 甚 真,&nbsp;其 中 有 信.&nbsp;自 古 及 今,&nbsp;&nbsp;其 名 不 去,&nbsp;以 閱 眾 甫.&nbsp;吾 何&nbsp;以 治 眾 甫 之 狀 哉.&nbsp;以 此.</p>
+                    <p>孔 德 之 容, 惟 道 是 從. 道 之 為 物, 惟 恍 惟 惚. 惚 兮 恍 兮, 其 中 有 象. 恍 兮 惚 兮, 其 中 有 物; 窈 兮 冥 兮, 其 中 有 精. 其 精 甚 真, 其 中 有 信. 自 古 及 今,  其 名 不 去, 以 閱 眾 甫. 吾 何 以 治 眾 甫 之 狀 哉. 以 此.</p>
                     <p><strong>Phiên âm:</strong></p>
                     <ol>
                         <li>Khổng đức chi dung, duy Đạo thị tùng.<a href="#_ftn1" name="_ftnref1">[1]</a></li>
@@ -164,13 +141,11 @@
                     <p>Muốn tìm Niết Bàn phải tìm trong Luân Hồi, Muốn tìm Tuyệt đối, phải tìm trong tương đối. Muốn tìm Trời, tìm Đạo, phải tìm ngay trong lòng mình.</p>
                     <p>Ở đây tôi trình bày cả hai phương pháp bình giảng, vì chúng bổ túc lẫn cho nhau và cho chúng ta một cái nhìn viên mãn về vũ trụ vạn hữu.</p>
                     <p>Vũ trụ vạn hữu này là biểu dương của Thượng đế, của Tuyệt đối. Cho nên vũ trụ vạn hữu này vẫn hàm tàng Tuyệt đối. Đó chính là phương pháp chính xác để biết nơi đâu mà tìm ra Đạo, ra Trời !</p>
-
-                    
                 </div>
-
             </div>
-
         </div>
+        <div class="d-md-block d-none border m-1 ms-0" style="width:180px"></div>
+        <div class="d-md-block d-none border m-1 ms-0 flex-fill"></div>
     </main>
 
 
