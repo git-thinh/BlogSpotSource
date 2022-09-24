@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:js='false' b:layoutsVersion='3' b:responsive='true'
+	xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b'
+	xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+	<head>
+		<title>
+			<data:blog.pageTitle />
+		</title>
+		<meta content='width=device-width, initial-scale=1' name='viewport' />
+		<b:skin>
+			<![CDATA[]]>
+		</b:skin>
+		<script type="text/javascript">
+			function LoadTheArchive(data) {
+				console.log('LoadTheArchive: data = ', data);
+
+				var json = JSON.stringify(data);
+				var blob = new Blob([json], {
+					type: "application/json"
+				});
+				var url = URL.createObjectURL(blob);
+
+				console.log('LoadTheArchive: url = ', url);
+			}
+		</script>
+	</head>
+	<body>
+		<b:section class='ui-main' id='MainPost' maxwidgets='' showaddelement='yes' />
+		<script src="/feeds/posts/default?max-results=500&amp;alt=json-in-script&amp;callback=LoadTheArchive">
+		</script>
+	</body>
+</html>
