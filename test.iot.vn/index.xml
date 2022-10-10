@@ -40,23 +40,7 @@
     
 		<b:skin><![CDATA[]]></b:skin>
 	</head>
-	<body>
-        <b:section id='MainPost1'>
-          <b:widget id='HTML1' locked='false' title='Recent Posts' type='HTML'>
-              <b:includable id='main'>
-                  <b:if cond='data:blog.pageType == "item"'>
-                      <!-- only display title if it's non-empty -->
-                      <b:if cond='data:title != ""'>
-                          <h2 class='title'><data:title/></h2>
-                      </b:if>
-                      <div class='widget-content'>
-                          <data:content/>
-                      </div>
-                  </b:if>
-              </b:includable>
-          </b:widget>
-        </b:section>
-      
+	<body>      
 		<b:if cond='data:post.labels any (l =&gt; l.name == &quot;Công Đức&quot;)'>		
 		    Dành cho nhãn có tên Blogspot		
 		</b:if>
@@ -88,7 +72,7 @@
 			</div>
 		</b:if>
 
-		<b:section class='ui-main' id='MainPost2' maxwidgets='' showaddelement='yes'/>
+		<b:section class='ui-main' id='MainPost1' maxwidgets='' showaddelement='yes'/>
 		<div id='app'/>      
         <script src='/feeds/pages/default?alt=json-in-script&amp;start-index=1&amp;max-results=1000&amp;callback=__dtPage'/>
         <script src='/feeds/posts/default?alt=json-in-script&amp;start-index=1&amp;max-results=1000&amp;callback=__dtPost'/>
