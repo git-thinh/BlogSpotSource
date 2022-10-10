@@ -2,79 +2,129 @@
 <!DOCTYPE html>
 <html b:css='false' b:defaultwidgetversion='2' b:js='false' b:layoutsVersion='3' b:responsive='true' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
   <head>
-		<meta charset='UTF-8'/>
-		<meta content='Anime Template' name='description'/>
-		<meta content='Anime, unica, creative, html' name='keywords'/>
-		<meta content='width=device-width,initial-scale=1' name='viewport'/>
-		<meta content='ie=edge' http-equiv='X-UA-Compatible'/>
-		<title>
-			<data:blog.pageTitle/> - <data:blog.pageName/> - <data:blog.title/>
-		</title>
-		
-		<b:if cond='data:blog.pageType == &quot;item&quot;'>
-			<b:include data='blog' name='all-head-content'/>
-			
-			<meta expr:content='data:view.description' property='og:description'/>
-		</b:if>
-		
-		
-        <meta content='SSR_GEN' name='sys.mode'/>
-        <meta content='test.com' name='sys.domain'/>
-        <meta content='' name='sys.base'/>
-        <meta content='b-01' name='sys.projectCode'/>
-        <meta content='' name='sys.hostAsset'/>
-        <meta content='https://static.iot.vn/' name='sys.hostStatic'/>
-        <meta content='' name='sys.apiDataGet'/>
-        <meta content='' name='sys.apiDataPost'/>
-        
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/localforage/1.10.0/localforage.min.js'/>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js'/>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/headjs/0.99/head.load.min.js'/>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'/>
+    <meta charset='UTF-8'/>
+    <meta content='Anime Template' name='description'/>
+    <meta content='Anime, unica, creative, html' name='keywords'/>
+    <meta content='width=device-width,initial-scale=1' name='viewport'/>
+    <meta content='ie=edge' http-equiv='X-UA-Compatible'/>
+    <title>
+      <data:blog.pageTitle/> - <data:blog.pageName/> - <data:blog.title/>
+    </title>
 
-		<link href='https://static-bk4.pages.dev/asset/lib-coms.css' rel='stylesheet'/>
-		<link href='https://static-bk4.pages.dev/asset/style.css' rel='stylesheet'/>
-        <script src='https://static-bk4.pages.dev/asset/sdk-blog-v1.0.0.js'/>            
-    	<link href='https://static-bk4.pages.dev/js/page.js' rel='modulepreload'/>
-        <script src='https://static-bk4.pages.dev/main.js' type='module'/>
-    
-		<b:skin><![CDATA[]]></b:skin>
-	</head>
-	<body>      
-		<b:if cond='data:post.labels any (l =&gt; l.name == &quot;Công Đức&quot;)'>		
-		    Dành cho nhãn có tên Blogspot		
-		</b:if>
-		
-		<b:if cond='data:blog.pageType == &quot;item&quot;'>
-			<div style='display:none;'>
-				<h1>
-					pageName = <data:blog.pageName/>
-					title = <data:blog.title/>
-					pageTitle = <data:blog.pageTitle/>
-					url = <data:blog.url/>
-					
-					view.isMobile = <data:view.isMobile/>
-					view.isHomepage = <data:view.isHomepage/>
-					
-					view.description = <data:view.description/>
-					view.title = <data:view.title/>
-					view.url = <data:view.url/>
-					
-					view.postId = <data:view.postId/>
-				</h1>
-				<b:if cond='data:view.isPost'>
-					data:view.isPost
-				</b:if>
-				<b:if cond='data:view.isPage'>
-					data:view.isPage
-					view.pageId = <data:view.pageId/>
-				</b:if>
-			</div>
-		</b:if>
+    <b:if cond='data:blog.pageType == &quot;item&quot;'>
+      <b:include data='blog' name='all-head-content'/>
 
-		<b:section class='ui-main' id='MainPost1' maxwidgets='' showaddelement='yes'/>
-		<div id='app'/>      
-        <script src='/feeds/pages/default?alt=json-in-script&amp;start-index=1&amp;max-results=1000&amp;callback=__dtPage'/>
-        <script src='/feeds/posts/default?alt=json-in-script&amp;start-index=1&amp;max-results=1000&amp;callback=__dtPost'/>
-	</body>
+      <meta expr:content='data:view.description' property='og:description'/>
+    </b:if>
+
+
+    <meta content='SSR_GEN' name='sys.mode'/>
+    <meta content='test.com' name='sys.domain'/>
+    <meta content='' name='sys.base'/>
+    <meta content='b-01' name='sys.projectCode'/>
+    <meta content='' name='sys.hostAsset'/>
+    <meta content='https://static.iot.vn/' name='sys.hostStatic'/>
+    <meta content='' name='sys.apiDataGet'/>
+    <meta content='' name='sys.apiDataPost'/>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/localforage/1.10.0/localforage.min.js'/>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js'/>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/headjs/0.99/head.load.min.js'/>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'/>
+
+    <link href='https://static-bk4.pages.dev/asset/lib-coms.css' rel='stylesheet'/>
+    <link href='https://static-bk4.pages.dev/asset/style.css' rel='stylesheet'/>
+    <script src='https://static-bk4.pages.dev/asset/sdk-blog-v1.0.0.js'/>
+    <link href='https://static-bk4.pages.dev/js/page.js' rel='modulepreload'/>
+    <script src='https://static-bk4.pages.dev/main.js' type='module'/>
+
+    <b:skin><![CDATA[]]></b:skin>
+  </head>
+  <body>
+    <b:section class='ui-main' id='MainPost0' maxwidgets='' showaddelement='yes'>
+      <b:widget id='PopularPosts1' locked='false' type='PopularPosts' version='2' visible='true'>
+        <b:widget-settings>
+          <b:widget-setting name='numItemsToShow'>10</b:widget-setting>
+          <b:widget-setting name='showThumbnails'>false</b:widget-setting>
+          <b:widget-setting name='showSnippets'>false</b:widget-setting>
+          <b:widget-setting name='timeRange'>LAST_YEAR</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+          <div>
+            <b:loop values='data:posts' var='post'>
+              <a><data:post.title/></a><br/>
+            </b:loop>
+          </div>
+        </b:includable>
+        <b:includable id='blogThisShare'></b:includable>
+        <b:includable id='bylineByName'></b:includable>
+        <b:includable id='bylineRegion'></b:includable>
+        <b:includable id='commentsLink'></b:includable>
+        <b:includable id='commentsLinkIframe'></b:includable>
+        <b:includable id='emailPostIcon'></b:includable>
+        <b:includable id='facebookShare'></b:includable>
+        <b:includable id='footerBylines'></b:includable>
+        <b:includable id='googlePlusShare'></b:includable>
+        <b:includable id='headerByline'></b:includable>
+        <b:includable id='linkShare'></b:includable>
+        <b:includable id='otherSharingButton'></b:includable>
+        <b:includable id='platformShare'></b:includable>
+        <b:includable id='postAuthor'></b:includable>
+        <b:includable id='postCommentsLink'></b:includable>
+        <b:includable id='postJumpLink'></b:includable>
+        <b:includable id='postLabels'></b:includable>
+        <b:includable id='postLocation'></b:includable>
+        <b:includable id='postReactions'></b:includable>
+        <b:includable id='postShareButtons'></b:includable>
+        <b:includable id='postTimestamp'></b:includable>
+        <b:includable id='sharingButton'></b:includable>
+        <b:includable id='sharingButtonContent'></b:includable>
+        <b:includable id='sharingButtons'></b:includable>
+        <b:includable id='sharingButtonsMenu'></b:includable>
+        <b:includable id='sharingPlatformIcon'></b:includable>
+        <b:includable id='snippetedPostByline'></b:includable>
+        <b:includable id='snippetedPostContent'></b:includable>
+        <b:includable id='snippetedPostThumbnail'></b:includable>
+        <b:includable id='snippetedPostTitle'></b:includable>
+        <b:includable id='snippetedPosts'></b:includable>
+      </b:widget>
+    </b:section>
+
+
+    <b:if cond='data:post.labels any (l =&gt; l.name == &quot;Công Đức&quot;)'>
+      Dành cho nhãn có tên Blogspot
+    </b:if>
+
+    <b:if cond='data:blog.pageType == &quot;item&quot;'>
+      <div style='display:none;'>
+        <h1>
+          pageName = <data:blog.pageName/>
+          title = <data:blog.title/>
+          pageTitle = <data:blog.pageTitle/>
+          url = <data:blog.url/>
+
+          view.isMobile = <data:view.isMobile/>
+          view.isHomepage = <data:view.isHomepage/>
+
+          view.description = <data:view.description/>
+          view.title = <data:view.title/>
+          view.url = <data:view.url/>
+
+          view.postId = <data:view.postId/>
+        </h1>
+        <b:if cond='data:view.isPost'>
+          data:view.isPost
+        </b:if>
+        <b:if cond='data:view.isPage'>
+          data:view.isPage
+          view.pageId = <data:view.pageId/>
+        </b:if>
+      </div>
+    </b:if>
+
+    <b:section class='ui-main' id='MainPost1' maxwidgets='' showaddelement='yes'/>
+    <div id='app'/>
+    <script src='/feeds/pages/default?alt=json-in-script&amp;start-index=1&amp;max-results=1000&amp;callback=__dtPage'/>
+    <script src='/feeds/posts/default?alt=json-in-script&amp;start-index=1&amp;max-results=1000&amp;callback=__dtPost'/>
+  </body>
 </html>
