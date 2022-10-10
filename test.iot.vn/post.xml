@@ -1,0 +1,11 @@
+
+<b:if cond='data:blog.pageType == "item"'>
+	<div style='display:none;'>
+		<h1>
+			pageName = <data:blog.pageName/>
+			title = <data:blog.title/>
+			pageTitle = <data:blog.pageTitle/>
+			url = <data:blog.url/>
+		</h1>
+	</div>
+</b:if>
