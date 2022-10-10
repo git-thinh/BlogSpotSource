@@ -52,7 +52,7 @@
         <b:includable id='main'>
           <div>
             <b:loop values='data:posts' var='post'>
-              <a><data:post.title/></a>
+              <a><data:post.title/></a><br/>
             </b:loop>
           </div>
         </b:includable>

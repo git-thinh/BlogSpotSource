@@ -41,9 +41,8 @@
     <b:skin><![CDATA[]]></b:skin>
   </head>
   <body>
-  
     <b:section class='ui-main' id='MainPost0' maxwidgets='' showaddelement='yes'>
-      <b:widget id='PopularPosts1' locked='false' title='Popular Posts' type='PopularPosts' version='2' visible='true'>
+      <b:widget id='PopularPosts1' locked='false' type='PopularPosts' version='2' visible='true'>
         <b:widget-settings>
           <b:widget-setting name='numItemsToShow'>10</b:widget-setting>
           <b:widget-setting name='showThumbnails'>false</b:widget-setting>
@@ -51,16 +50,46 @@
           <b:widget-setting name='timeRange'>LAST_YEAR</b:widget-setting>
         </b:widget-settings>
         <b:includable id='main'>
-          <div class='ui-popular-posts'>
+          <div>
             <b:loop values='data:posts' var='post'>
-				<a expr:href='data:post.href'>
-				  <data:post.title/>
-				</a>
+              <a><data:post.title/></a><br/>
             </b:loop>
           </div>
         </b:includable>
+        <b:includable id='blogThisShare'></b:includable>
+        <b:includable id='bylineByName'></b:includable>
+        <b:includable id='bylineRegion'></b:includable>
+        <b:includable id='commentsLink'></b:includable>
+        <b:includable id='commentsLinkIframe'></b:includable>
+        <b:includable id='emailPostIcon'></b:includable>
+        <b:includable id='facebookShare'></b:includable>
+        <b:includable id='footerBylines'></b:includable>
+        <b:includable id='googlePlusShare'></b:includable>
+        <b:includable id='headerByline'></b:includable>
+        <b:includable id='linkShare'></b:includable>
+        <b:includable id='otherSharingButton'></b:includable>
+        <b:includable id='platformShare'></b:includable>
+        <b:includable id='postAuthor'></b:includable>
+        <b:includable id='postCommentsLink'></b:includable>
+        <b:includable id='postJumpLink'></b:includable>
+        <b:includable id='postLabels'></b:includable>
+        <b:includable id='postLocation'></b:includable>
+        <b:includable id='postReactions'></b:includable>
+        <b:includable id='postShareButtons'></b:includable>
+        <b:includable id='postTimestamp'></b:includable>
+        <b:includable id='sharingButton'></b:includable>
+        <b:includable id='sharingButtonContent'></b:includable>
+        <b:includable id='sharingButtons'></b:includable>
+        <b:includable id='sharingButtonsMenu'></b:includable>
+        <b:includable id='sharingPlatformIcon'></b:includable>
+        <b:includable id='snippetedPostByline'></b:includable>
+        <b:includable id='snippetedPostContent'></b:includable>
+        <b:includable id='snippetedPostThumbnail'></b:includable>
+        <b:includable id='snippetedPostTitle'></b:includable>
+        <b:includable id='snippetedPosts'></b:includable>
       </b:widget>
     </b:section>
+
 
     <b:if cond='data:post.labels any (l =&gt; l.name == &quot;Công Đức&quot;)'>
       Dành cho nhãn có tên Blogspot
